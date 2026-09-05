@@ -8,6 +8,7 @@
 | `docs/02-curriculum.md` | 15단원 구성과 주차 배분 초안 |
 | `docs/03-syllabus.md` | 단원별 세부 목차 (출발선·개념·예제·연습·쪽수) |
 | `docs/04-textbook-map.md` | 교과서(2022 개정 물리학) 소단원과 이 책 단원 대조표 |
+| `docs/05-writing-rules.md` | 원고 작성 규칙 (교과서 문항 사용 금지 등) |
 | `manuscript/` | 단원별 원고 (마크다운) |
 | `design/canvas/` | 표지 시안·내지 샘플 디자인 원본 (`*.dc.html`, `canvas.json`) |
 
