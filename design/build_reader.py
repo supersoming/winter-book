@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AREA = {n: ('힘과 에너지', '#E07A95', '#FFF3F5', '') for n in ['00','01','02','03','04','05','06','07']}
 AREA.update({n: ('전기와 자기', '#5EAE88', '#EEF8F2', '') for n in ['08','09','10','11']})
 AREA.update({n: ('빛과 물질', '#8A84E2', '#F1F0FF', '') for n in ['12','13','14','15']})
-AREA.update({'R1': ('힘과 에너지', '#E07A95', '#FFF3F5', ''), 'R2': ('전기와 자기', '#5EAE88', '#EEF8F2', ''), 'R3': ('빛과 물질', '#8A84E2', '#F1F0FF', '')})
+AREA.update({'R1': ('힘과 에너지', '#E07A95', '#FFF3F5', ''), 'R2': ('전기와 자기', '#5EAE88', '#EEF8F2', ''), 'R3': ('빛과 물질', '#8A84E2', '#F1F0FF', ''), 'F1': ('전 범위', '#443E5C', '#F3F1F8', '')})
 
 def tex(s):
     """간단한 LaTeX → 읽을 수 있는 유니코드."""
@@ -82,7 +82,7 @@ def post(h):
 
 def unit(path):
     src = open(path, encoding='utf-8').read()
-    m = re.match(r'# (Δ[0-9R]\d) (.+)\n', src); code, title = m.group(1), m.group(2)
+    m = re.match(r'# (Δ[0-9RF]\d) (.+)\n', src); code, title = m.group(1), m.group(2)
     meta = re.search(r'> 영역: (.+)\n> 한 줄: (.+)\n', src)
     body = src[meta.end():]
     h = markdown.markdown(pre(body), extensions=['tables'])
@@ -188,7 +188,7 @@ details[open] .hint {{ display:none; }}
 <div class="wrap">
   <nav>
     <div class="brand"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 L23 21 L1 21 Z M12 8.5 L17.6 18 L6.4 18 Z" fill-rule="evenodd" fill="currentColor"/></svg>델타 물리학 · 원고</div>
-    <div class="navhead">초고</div>
+    <div class="navhead">원고</div>
     {nav}
   </nav>
   <main>{sections}</main>
