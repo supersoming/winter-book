@@ -7,54 +7,96 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Syne:wght@500;700;800&family=Gowun+Batang:wght@400;700&display=swap">
   <style>
     body { margin: 0; font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
-    a { color: #2B2540; } a:hover { color: #BFCBFF; }
+    a { color: #443E5C; } a:hover { color: #8A84E2; }
   </style>
 </helmet>
-<div style="width: 1000px; height: 600px; background: #FFFFFF; color: #2B2540; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 24px;">
+<div style="position: relative; width: 1000px; height: 560px; background: #FFFFFF; color: #443E5C; overflow: hidden; box-sizing: border-box; padding: 40px; background: #FFFFFF; background-image: none;">
+
   <div style="display: flex; flex-direction: column; gap: 6px;">
-    <div style="font-size: 20px; font-weight: 700;">시리즈 확장 규칙 — 책장에 꽂으면 무지개가 된다</div>
-    <div style="font-size: 14px; line-height: 1.6; color: #555;">프리즘과 구도는 고정, 갈라져 나오는 빛의 색 구간만 바뀐다. 겨울은 라일락–하늘, 봄은 민트–레몬, 여름은 피치–분홍. 세 권의 책등을 나란히 두면 전체 스펙트럼이 완성된다.</div>
+    <div style="font-size: 20px; font-weight: 700;">시리즈 확장 규칙</div>
+    <div style="font-size: 14px; line-height: 1.6; opacity: 0.8;">프리즘 링과 레이아웃은 고정. 링 안쪽 굴절색의 구간과 EDITION 단어, 뒤표지 문장만 바뀐다. 겨울은 한색 위주, 봄은 초록·노랑, 여름은 주황·분홍 구간이 링의 긴 변에 오도록 렌더 각도를 조정한다.</div>
   </div>
-
-  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; height: 330px;">
-    <div style="position: relative; background: radial-gradient(ellipse 90% 60% at 70% 45%, #2A2650 0%, #0F1128 70%); color: #fff; box-sizing: border-box; padding: 18px; overflow: hidden;">
-      <svg viewBox="0 0 300 330" width="100%" height="100%" style="position: absolute; inset: 0;" aria-hidden="true">
-        <g opacity="0.95"><polygon points="170,160 300,110 300,134" fill="#DABDFF"></polygon><polygon points="170,160 300,140 300,164" fill="#CBC3FF"></polygon><polygon points="170,160 300,170 300,194" fill="#BFCBFF"></polygon><polygon points="170,160 300,200 300,224" fill="#B5E6F7"></polygon></g>
-        <polygon points="0,150 110,160 0,166" fill="#ffffff" opacity="0.9"></polygon>
-        <polygon points="150,80 235,240 65,240" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-width="2"></polygon>
-      </svg>
-      <div style="position: relative; display: flex; justify-content: space-between; font-family: 'Syne', sans-serif; font-size: 9px; letter-spacing: 0.24em; font-weight: 700;"><div>DELTA PHYSICS</div><div>WINTER</div></div>
-      <div style="position: absolute; left: 18px; bottom: 18px; display: flex; flex-direction: column; gap: 4px;"><div style="font-size: 20px; font-weight: 700;">델타 물리학</div><div style="font-size: 10px; color: #B9C4E6;">겨울 · 라일락–하늘</div></div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding-top: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="position: relative; height: 330px; background-color: #F7F6FA; background-image: radial-gradient(circle at 18% 22%, rgba(255,181,194,0.22) 0%, rgba(255,181,194,0) 34%), radial-gradient(circle at 82% 30%, rgba(191,203,255,0.26) 0%, rgba(191,203,255,0) 36%), radial-gradient(circle at 60% 85%, rgba(198,240,214,0.22) 0%, rgba(198,240,214,0) 34%), repeating-linear-gradient(0deg, rgba(68,62,92,0.07) 0 1px, transparent 1px 34px), repeating-linear-gradient(60deg, rgba(68,62,92,0.07) 0 1px, transparent 1px 34px), repeating-linear-gradient(120deg, rgba(68,62,92,0.07) 0 1px, transparent 1px 34px); overflow: hidden; border: 1px solid rgba(68,62,92,0.12); box-sizing: border-box;">
+        <div style="position: absolute; left: 0; right: 0; top: 30px; display: flex; flex-direction: column; align-items: center; gap: 8px;"><div style="display: flex; align-items: flex-end; gap: 2px; color: #443E5C;">
+      <svg viewBox="0 0 100 120" width="30" height="36" aria-hidden="true" style="display: block;"><path d="M8 8 L92 60 L8 112 Z M30 44 L30 76 L56 60 Z" fill-rule="evenodd" fill="#443E5C"></path></svg>
+      <div style="font-family: 'Syne', 'IBM Plex Sans KR', sans-serif; font-size: 40px; font-weight: 800; line-height: 0.82; letter-spacing: -0.04em; transform: skewX(-8deg); padding-bottom: 1px;">elt</div>
+      <svg viewBox="0 0 110 120" width="33" height="36" aria-hidden="true" style="display: block;"><path d="M4 112 L44 8 L66 8 L106 112 L84 112 L55 34 L26 112 Z" fill="#443E5C"></path><circle cx="55" cy="96" r="9" fill="#443E5C"></circle></svg>
+    </div><div style="display: flex; align-items: baseline; gap: 8px;"><div style="font-size: 16px; font-weight: 700;">물리학</div><div style="font-family: 'Syne', sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.3em;">WINTER EDITION</div></div></div>
+        <svg viewBox="0 0 300 280" width="190" height="177" style="position: absolute; left: 60px; top: 128px; transform: rotate(0deg); display: block;" aria-hidden="true">
+      <defs>
+        <linearGradient id="rbwinter190" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#FF6B8A"></stop><stop offset="0.167" stop-color="#FFB347"></stop><stop offset="0.333" stop-color="#FFE45C"></stop><stop offset="0.500" stop-color="#5ED9A0"></stop><stop offset="0.667" stop-color="#4FC3F7"></stop><stop offset="0.833" stop-color="#6C7BFF"></stop><stop offset="1.000" stop-color="#B66CFF"></stop></linearGradient>
+        <linearGradient id="glwinter190" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"></stop><stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.15"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.8"></stop></linearGradient>
+        <filter id="shwinter190" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter>
+        <filter id="blwinter190" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.5"></feGaussianBlur></filter>
+      </defs>
+      <ellipse cx="150" cy="262" rx="120" ry="12" fill="#443E5C" fill-opacity="0.18" filter="url(#shwinter190)"></ellipse>
+      <path d="M150 14 L290 250 L10 250 Z M150 78 L232 216 L68 216 Z" fill-rule="evenodd" fill="url(#rbwinter190)" filter="url(#blwinter190)"></path>
+      <path d="M150 14 L290 250 L10 250 Z M150 78 L232 216 L68 216 Z" fill-rule="evenodd" fill="url(#glwinter190)" style="mix-blend-mode: soft-light;"></path>
+      <path d="M150 14 L290 250 L10 250 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="5"></path>
+      <path d="M150 78 L232 216 L68 216 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="4"></path>
+      <path d="M150 14 L290 250 L10 250 Z" fill="none" stroke="#443E5C" stroke-opacity="0.35" stroke-width="1.2"></path>
+      <path d="M150 78 L232 216 L68 216 Z" fill="none" stroke="#443E5C" stroke-opacity="0.35" stroke-width="1"></path>
+      <path d="M150 22 L156 32 L150 44 L144 32 Z" fill="#FFFFFF" fill-opacity="0.9"></path>
+    </svg>
+      </div>
+      <div style="font-size: 13px; font-weight: 700;">겨울 · 한색 구간 · "이번 겨울, 당신의 변화량."</div>
     </div>
-    <div style="position: relative; background: radial-gradient(ellipse 90% 60% at 70% 45%, #1F3A2E 0%, #0C1A14 70%); color: #fff; box-sizing: border-box; padding: 18px; overflow: hidden;">
-      <svg viewBox="0 0 300 330" width="100%" height="100%" style="position: absolute; inset: 0;" aria-hidden="true">
-        <g opacity="0.95"><polygon points="170,160 300,110 300,134" fill="#B5E6F7"></polygon><polygon points="170,160 300,140 300,164" fill="#C6F0D6"></polygon><polygon points="170,160 300,170 300,194" fill="#A8DDA0"></polygon><polygon points="170,160 300,200 300,224" fill="#FFF1B5"></polygon></g>
-        <polygon points="0,150 110,160 0,166" fill="#ffffff" opacity="0.9"></polygon>
-        <polygon points="150,80 235,240 65,240" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-width="2"></polygon>
-      </svg>
-      <div style="position: relative; display: flex; justify-content: space-between; font-family: 'Syne', sans-serif; font-size: 9px; letter-spacing: 0.24em; font-weight: 700;"><div>DELTA PHYSICS</div><div>SPRING</div></div>
-      <div style="position: absolute; left: 18px; bottom: 18px; display: flex; flex-direction: column; gap: 4px;"><div style="font-size: 20px; font-weight: 700;">델타 물리학</div><div style="font-size: 10px; color: #BFE3C9;">봄 · 민트–레몬 [범위 추후 결정]</div></div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="position: relative; height: 330px; background-color: #F7F6FA; background-image: radial-gradient(circle at 18% 22%, rgba(255,181,194,0.22) 0%, rgba(255,181,194,0) 34%), radial-gradient(circle at 82% 30%, rgba(191,203,255,0.26) 0%, rgba(191,203,255,0) 36%), radial-gradient(circle at 60% 85%, rgba(198,240,214,0.22) 0%, rgba(198,240,214,0) 34%), repeating-linear-gradient(0deg, rgba(68,62,92,0.07) 0 1px, transparent 1px 34px), repeating-linear-gradient(60deg, rgba(68,62,92,0.07) 0 1px, transparent 1px 34px), repeating-linear-gradient(120deg, rgba(68,62,92,0.07) 0 1px, transparent 1px 34px); overflow: hidden; border: 1px solid rgba(68,62,92,0.12); box-sizing: border-box;">
+        <div style="position: absolute; left: 0; right: 0; top: 30px; display: flex; flex-direction: column; align-items: center; gap: 8px;"><div style="display: flex; align-items: flex-end; gap: 2px; color: #443E5C;">
+      <svg viewBox="0 0 100 120" width="30" height="36" aria-hidden="true" style="display: block;"><path d="M8 8 L92 60 L8 112 Z M30 44 L30 76 L56 60 Z" fill-rule="evenodd" fill="#443E5C"></path></svg>
+      <div style="font-family: 'Syne', 'IBM Plex Sans KR', sans-serif; font-size: 40px; font-weight: 800; line-height: 0.82; letter-spacing: -0.04em; transform: skewX(-8deg); padding-bottom: 1px;">elt</div>
+      <svg viewBox="0 0 110 120" width="33" height="36" aria-hidden="true" style="display: block;"><path d="M4 112 L44 8 L66 8 L106 112 L84 112 L55 34 L26 112 Z" fill="#443E5C"></path><circle cx="55" cy="96" r="9" fill="#443E5C"></circle></svg>
+    </div><div style="display: flex; align-items: baseline; gap: 8px;"><div style="font-size: 16px; font-weight: 700;">물리학</div><div style="font-family: 'Syne', sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.3em;">SPRING EDITION</div></div></div>
+        <svg viewBox="0 0 300 280" width="190" height="177" style="position: absolute; left: 60px; top: 128px; transform: rotate(0deg); display: block;" aria-hidden="true">
+      <defs>
+        <linearGradient id="rbspring190" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#FFE45C"></stop><stop offset="0.167" stop-color="#B7F06B"></stop><stop offset="0.333" stop-color="#5ED9A0"></stop><stop offset="0.500" stop-color="#4FC3F7"></stop><stop offset="0.667" stop-color="#6C7BFF"></stop><stop offset="0.833" stop-color="#B66CFF"></stop><stop offset="1.000" stop-color="#FF6B8A"></stop></linearGradient>
+        <linearGradient id="glspring190" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"></stop><stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.15"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.8"></stop></linearGradient>
+        <filter id="shspring190" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter>
+        <filter id="blspring190" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.5"></feGaussianBlur></filter>
+      </defs>
+      <ellipse cx="150" cy="262" rx="120" ry="12" fill="#443E5C" fill-opacity="0.18" filter="url(#shspring190)"></ellipse>
+      <path d="M150 14 L290 250 L10 250 Z M150 78 L232 216 L68 216 Z" fill-rule="evenodd" fill="url(#rbspring190)" filter="url(#blspring190)"></path>
+      <path d="M150 14 L290 250 L10 250 Z M150 78 L232 216 L68 216 Z" fill-rule="evenodd" fill="url(#glspring190)" style="mix-blend-mode: soft-light;"></path>
+      <path d="M150 14 L290 250 L10 250 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="5"></path>
+      <path d="M150 78 L232 216 L68 216 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="4"></path>
+      <path d="M150 14 L290 250 L10 250 Z" fill="none" stroke="#443E5C" stroke-opacity="0.35" stroke-width="1.2"></path>
+      <path d="M150 78 L232 216 L68 216 Z" fill="none" stroke="#443E5C" stroke-opacity="0.35" stroke-width="1"></path>
+      <path d="M150 22 L156 32 L150 44 L144 32 Z" fill="#FFFFFF" fill-opacity="0.9"></path>
+    </svg>
+      </div>
+      <div style="font-size: 13px; font-weight: 700;">봄 · 초록–노랑 구간 · [봄 문장]</div>
     </div>
-    <div style="position: relative; background: radial-gradient(ellipse 90% 60% at 70% 45%, #3D2431 0%, #1A0E14 70%); color: #fff; box-sizing: border-box; padding: 18px; overflow: hidden;">
-      <svg viewBox="0 0 300 330" width="100%" height="100%" style="position: absolute; inset: 0;" aria-hidden="true">
-        <g opacity="0.95"><polygon points="170,160 300,110 300,134" fill="#FFF1B5"></polygon><polygon points="170,160 300,140 300,164" fill="#FFCFB0"></polygon><polygon points="170,160 300,170 300,194" fill="#E07A95"></polygon><polygon points="170,160 300,200 300,224" fill="#FFB5C2"></polygon></g>
-        <polygon points="0,150 110,160 0,166" fill="#ffffff" opacity="0.9"></polygon>
-        <polygon points="150,80 235,240 65,240" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-width="2"></polygon>
-      </svg>
-      <div style="position: relative; display: flex; justify-content: space-between; font-family: 'Syne', sans-serif; font-size: 9px; letter-spacing: 0.24em; font-weight: 700;"><div>DELTA PHYSICS</div><div>SUMMER</div></div>
-      <div style="position: absolute; left: 18px; bottom: 18px; display: flex; flex-direction: column; gap: 4px;"><div style="font-size: 20px; font-weight: 700;">델타 물리학</div><div style="font-size: 10px; color: #F3CDB8;">여름 · 피치–분홍 [범위 추후 결정]</div></div>
-    </div>
-  </div>
-
-  <div style="display: flex; flex-direction: column; gap: 8px;">
-    <div style="font-size: 12px; font-weight: 600; color: #555;">책등 3권 나란히</div>
-    <div style="display: flex; height: 44px;">
-      <div style="flex: 1; background: linear-gradient(90deg, #DABDFF, #BFCBFF, #B5E6F7); display: flex; align-items: center; padding: 0 14px; color: #fff; font-family: 'Syne', sans-serif; font-size: 10px; letter-spacing: 0.2em; font-weight: 700;">WINTER</div>
-      <div style="flex: 1; background: linear-gradient(90deg, #B5E6F7, #C6F0D6, #FFF1B5); display: flex; align-items: center; padding: 0 14px; color: #2B2540; font-family: 'Syne', sans-serif; font-size: 10px; letter-spacing: 0.2em; font-weight: 700;">SPRING</div>
-      <div style="flex: 1; background: linear-gradient(90deg, #FFF1B5, #FFCFB0, #FFB5C2); display: flex; align-items: center; padding: 0 14px; color: #2B2540; font-family: 'Syne', sans-serif; font-size: 10px; letter-spacing: 0.2em; font-weight: 700;">SUMMER</div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="position: relative; height: 330px; background-color: #F7F6FA; background-image: radial-gradient(circle at 18% 22%, rgba(255,181,194,0.22) 0%, rgba(255,181,194,0) 34%), radial-gradient(circle at 82% 30%, rgba(191,203,255,0.26) 0%, rgba(191,203,255,0) 36%), radial-gradient(circle at 60% 85%, rgba(198,240,214,0.22) 0%, rgba(198,240,214,0) 34%), repeating-linear-gradient(0deg, rgba(68,62,92,0.07) 0 1px, transparent 1px 34px), repeating-linear-gradient(60deg, rgba(68,62,92,0.07) 0 1px, transparent 1px 34px), repeating-linear-gradient(120deg, rgba(68,62,92,0.07) 0 1px, transparent 1px 34px); overflow: hidden; border: 1px solid rgba(68,62,92,0.12); box-sizing: border-box;">
+        <div style="position: absolute; left: 0; right: 0; top: 30px; display: flex; flex-direction: column; align-items: center; gap: 8px;"><div style="display: flex; align-items: flex-end; gap: 2px; color: #443E5C;">
+      <svg viewBox="0 0 100 120" width="30" height="36" aria-hidden="true" style="display: block;"><path d="M8 8 L92 60 L8 112 Z M30 44 L30 76 L56 60 Z" fill-rule="evenodd" fill="#443E5C"></path></svg>
+      <div style="font-family: 'Syne', 'IBM Plex Sans KR', sans-serif; font-size: 40px; font-weight: 800; line-height: 0.82; letter-spacing: -0.04em; transform: skewX(-8deg); padding-bottom: 1px;">elt</div>
+      <svg viewBox="0 0 110 120" width="33" height="36" aria-hidden="true" style="display: block;"><path d="M4 112 L44 8 L66 8 L106 112 L84 112 L55 34 L26 112 Z" fill="#443E5C"></path><circle cx="55" cy="96" r="9" fill="#443E5C"></circle></svg>
+    </div><div style="display: flex; align-items: baseline; gap: 8px;"><div style="font-size: 16px; font-weight: 700;">물리학</div><div style="font-family: 'Syne', sans-serif; font-size: 7px; font-weight: 700; letter-spacing: 0.3em;">SUMMER EDITION</div></div></div>
+        <svg viewBox="0 0 300 280" width="190" height="177" style="position: absolute; left: 60px; top: 128px; transform: rotate(0deg); display: block;" aria-hidden="true">
+      <defs>
+        <linearGradient id="rbsummer190" x1="0" y1="0" x2="1" y2="1"><stop offset="0.000" stop-color="#B66CFF"></stop><stop offset="0.167" stop-color="#FF6B8A"></stop><stop offset="0.333" stop-color="#FF8A5C"></stop><stop offset="0.500" stop-color="#FFB347"></stop><stop offset="0.667" stop-color="#FFE45C"></stop><stop offset="0.833" stop-color="#B7F06B"></stop><stop offset="1.000" stop-color="#5ED9A0"></stop></linearGradient>
+        <linearGradient id="glsummer190" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"></stop><stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.15"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.8"></stop></linearGradient>
+        <filter id="shsummer190" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"></feGaussianBlur></filter>
+        <filter id="blsummer190" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.5"></feGaussianBlur></filter>
+      </defs>
+      <ellipse cx="150" cy="262" rx="120" ry="12" fill="#443E5C" fill-opacity="0.18" filter="url(#shsummer190)"></ellipse>
+      <path d="M150 14 L290 250 L10 250 Z M150 78 L232 216 L68 216 Z" fill-rule="evenodd" fill="url(#rbsummer190)" filter="url(#blsummer190)"></path>
+      <path d="M150 14 L290 250 L10 250 Z M150 78 L232 216 L68 216 Z" fill-rule="evenodd" fill="url(#glsummer190)" style="mix-blend-mode: soft-light;"></path>
+      <path d="M150 14 L290 250 L10 250 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="5"></path>
+      <path d="M150 78 L232 216 L68 216 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="4"></path>
+      <path d="M150 14 L290 250 L10 250 Z" fill="none" stroke="#443E5C" stroke-opacity="0.35" stroke-width="1.2"></path>
+      <path d="M150 78 L232 216 L68 216 Z" fill="none" stroke="#443E5C" stroke-opacity="0.35" stroke-width="1"></path>
+      <path d="M150 22 L156 32 L150 44 L144 32 Z" fill="#FFFFFF" fill-opacity="0.9"></path>
+    </svg>
+      </div>
+      <div style="font-size: 13px; font-weight: 700;">여름 · 주황–분홍 구간 · [여름 문장]</div>
     </div>
   </div>
 </div>

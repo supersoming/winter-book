@@ -14,10 +14,10 @@ SYNE = "'Syne', 'IBM Plex Sans KR', sans-serif"
 BAR = "linear-gradient(90deg, #FFB5C2, #FFCFB0, #FFF1B5, #C6F0D6, #B5E6F7, #BFCBFF, #DABDFF)"
 
 # ---------- 글리프 (24x24, stroke=currentColor) ----------
-def glyph(kind, color='#2B2540', size=24, spectrum=False):
+def glyph(kind, color='#443E5C', size=24, spectrum=False):
     s = f'stroke="{color}" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round"'
     inner = {
-        'mark':    f'<path d="M12 3 L21 19 L3 19 Z" {s}></path><path d="M1 11 H8" {s}></path><path d="M15.5 11 L23 7.5 M15.5 11 L23 11 M15.5 11 L23 14.5" {s} stroke-width="1.6"></path>',
+        'mark':    f'<path d="M12 2 L23 21 L1 21 Z M12 8.5 L17.6 18 L6.4 18 Z" fill-rule="evenodd" fill="{color}"></path>',
         'start':   f'<path d="M12 2.5 L19.5 16 L4.5 16 Z" {s}></path><path d="M2 21 H22" {s}></path><circle cx="4.5" cy="21" r="2" fill="{color}" stroke="none"></circle>',
         'concept': f'<path d="M13 4 L22 20 L4 20 Z" {s}></path><path d="M0.5 12 H9" {s} stroke-width="2.6"></path>',
         'example': f'<path d="M10 4 L19 20 L1 20 Z" {s}></path><path d="M14 12 L23.5 6.5 M14 12 L23.5 12 M14 12 L23.5 17.5" {s} stroke-width="1.8"></path>',
@@ -33,14 +33,14 @@ def glyph(kind, color='#2B2540', size=24, spectrum=False):
 
 def badge(kind, area, label, size=28, gsize=18):
     a = AREAS[area]
-    bg = '#2B2540' if kind == 'weekly' else a['g']
+    bg = '#443E5C' if kind == 'weekly' else a['g']
     return (f'<div style="display: inline-flex; align-items: center; gap: 8px;">'
-            f'<div style="width: {size}px; height: {size}px; background: {bg}; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">{glyph(kind, color=("#FFFFFF" if kind == "weekly" else "#2B2540"), size=gsize)}</div>'
-            f'<div style="font-size: {int(size*0.54)}px; font-weight: 700; color: #2B2540; letter-spacing: -0.01em;">{label}</div></div>')
+            f'<div style="width: {size}px; height: {size}px; background: {bg}; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">{glyph(kind, color=("#FFFFFF" if kind == "weekly" else "#443E5C"), size=gsize)}</div>'
+            f'<div style="font-size: {int(size*0.54)}px; font-weight: 700; color: #443E5C; letter-spacing: -0.01em;">{label}</div></div>')
 
 def numbadge(n, area, size=28):
     a = AREAS[area]
-    return (f'<div style="width: {size}px; height: {size}px; background: {a["g"]}; color: #2B2540; display: flex; align-items: center; justify-content: center; '
+    return (f'<div style="width: {size}px; height: {size}px; background: {a["g"]}; color: #443E5C; display: flex; align-items: center; justify-content: center; '
             f'font-family: {SYNE}; font-size: {int(size*0.58)}px; font-weight: 800; flex-shrink: 0;">{n}</div>')
 
 def stepnum(n, area, size=22):
@@ -72,10 +72,10 @@ def page(body, w=710, h=971, pad='0 52px 40px 52px', bg='#FFFFFF', extra_style='
   {FONT}
   <style>
     body {{ margin: 0; font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }}
-    a {{ color: #2B2540; }} a:hover {{ color: #BFCBFF; }}
+    a {{ color: #443E5C; }} a:hover {{ color: #BFCBFF; }}
   </style>
 </helmet>
-<div style="position: relative; width: {w}px; height: {h}px; background: {bg}; color: #2B2540; box-sizing: border-box; padding: {pad}; display: flex; flex-direction: column; gap: 0; overflow: hidden; {extra_style}">
+<div style="position: relative; width: {w}px; height: {h}px; background: {bg}; color: #443E5C; box-sizing: border-box; padding: {pad}; display: flex; flex-direction: column; gap: 0; overflow: hidden; {extra_style}">
 {body}
 </div>
 </x-dc>
@@ -102,22 +102,22 @@ def marks_sheet():
     # 마스터 마크 3종
     master = f'''
     <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
-      <div style="height: 120px; background: #2B2540; display: flex; align-items: center; justify-content: center;">{glyph('mark', color='#FFFFFF', size=64)}</div>
-      <div style="height: 120px; background: #FFFFFF; border: 1px solid #E5E5E5; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">{glyph('mark', color='#2B2540', size=64)}</div>
+      <div style="height: 120px; background: #443E5C; display: flex; align-items: center; justify-content: center;">{glyph('mark', color='#FFFFFF', size=64)}</div>
+      <div style="height: 120px; background: #FFFFFF; border: 1px solid #E5E5E5; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">{glyph('mark', color='#443E5C', size=64)}</div>
       <div style="height: 120px; background: {AREAS['E']['g']}; display: flex; align-items: center; justify-content: center;">{glyph('mark', color='#FFFFFF', size=64)}</div>
-      <div style="height: 120px; background: #FFFFFF; border: 1px solid #E5E5E5; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 14px;">{glyph('mark', color='#2B2540', size=40)}{glyph('mark', color='#2B2540', size=24)}{glyph('mark', color='#2B2540', size=16)}</div>
+      <div style="height: 120px; background: #FFFFFF; border: 1px solid #E5E5E5; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 14px;">{glyph('mark', color='#443E5C', size=40)}{glyph('mark', color='#443E5C', size=24)}{glyph('mark', color='#443E5C', size=16)}</div>
     </div>
     <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; font-size: 11px; color: #555555;">
-      <div>잉크 바탕 · 흰색</div><div>흰 바탕 · 잉크 1도</div><div>영역 파스텔 위 · 잉크</div><div>최소 크기 16px (인쇄 4 mm)</div>
+      <div>잉크 바탕 · 흰색</div><div>흰 바탕 · 잉크 1도 (기본형)</div><div>영역 파스텔 위 · 잉크</div><div>최소 크기 16px (인쇄 4 mm)</div>
     </div>'''
     # 워드마크
     wordmark = f'''
     <div style="display: flex; align-items: center; gap: 28px; padding: 22px 24px; border: 1px solid #E5E5E5;">
-      <div style="display: flex; align-items: center; gap: 12px;">{glyph('mark', color='#2B2540', size=44)}<div style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em;">델타 물리학</div></div>
+      <div style="display: flex; align-items: center; gap: 12px;">{glyph('mark', color='#443E5C', size=44)}<div style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em;">델타 물리학</div></div>
       <div style="width: 1px; height: 44px; background: #E5E5E5;"></div>
-      <div style="display: flex; align-items: center; gap: 12px;">{glyph('mark', color='#2B2540', size=44)}<div style="font-family: {SYNE}; font-size: 22px; font-weight: 800; letter-spacing: 0.12em;">DELTA PHYSICS</div></div>
+      <div style="display: flex; align-items: center; gap: 12px;">{glyph('mark', color='#443E5C', size=44)}<div style="font-family: {SYNE}; font-size: 22px; font-weight: 800; letter-spacing: 0.12em;">DELTA PHYSICS</div></div>
       <div style="width: 1px; height: 44px; background: #E5E5E5;"></div>
-      <div style="display: flex; align-items: center; gap: 8px;">{glyph('mark', color='#2B2540', size=20)}<div style="font-size: 12px; font-weight: 700;">델타 물리학 · 겨울</div></div>
+      <div style="display: flex; align-items: center; gap: 8px;">{glyph('mark', color='#443E5C', size=20)}<div style="font-size: 12px; font-weight: 700;">델타 물리학 · 겨울</div></div>
     </div>'''
     # 코너 배지 6종 × 영역 3색
     rows = ''
@@ -127,16 +127,16 @@ def marks_sheet():
                  f'<div style="font-size: 12px; font-weight: 700;">{a["name"]}<div style="font-family: {SYNE}; font-weight: 700; font-size: 10px; color: {a["main"]};">{a["rng"]}</div></div>'
                  + badge('start', area, 'Δ0 출발선') + badge('concept', area, 'Δ개념') + badge('example', area, 'Δ예제')
                  + badge('practice', area, 'Δ연습') + badge('check', area, 'Δ체크') + badge('weekly', area, '주간 Δ') + '</div>')
-    corners = f'<div style="display: flex; flex-direction: column; border-top: 2px solid #2B2540;">{rows}</div>'
+    corners = f'<div style="display: flex; flex-direction: column; border-top: 2px solid #443E5C;">{rows}</div>'
     # 글리프 의미
     meaning = f'''
     <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; font-size: 11px; line-height: 1.5; color: #555555;">
-      <div><span style="font-weight: 700; color: #2B2540;">출발선</span> 프리즘 아래 출발선과 점. 아직 빛이 들어가기 전.</div>
-      <div><span style="font-weight: 700; color: #2B2540;">개념</span> 백색광 한 줄기가 프리즘으로 들어간다.</div>
-      <div><span style="font-weight: 700; color: #2B2540;">예제</span> 빛이 갈라져 나온다. 개념이 풀이로 펼쳐진다.</div>
-      <div><span style="font-weight: 700; color: #2B2540;">연습</span> 프리즘 셋. 반복.</div>
-      <div><span style="font-weight: 700; color: #2B2540;">체크</span> 프리즘 안에 체크.</div>
-      <div><span style="font-weight: 700; color: #2B2540;">주간 Δ</span> 7색 띠로 채워진 프리즘. 검정 바탕 고정.</div>
+      <div><span style="font-weight: 700; color: #443E5C;">출발선</span> 프리즘 아래 출발선과 점. 아직 빛이 들어가기 전.</div>
+      <div><span style="font-weight: 700; color: #443E5C;">개념</span> 백색광 한 줄기가 프리즘으로 들어간다.</div>
+      <div><span style="font-weight: 700; color: #443E5C;">예제</span> 빛이 갈라져 나온다. 개념이 풀이로 펼쳐진다.</div>
+      <div><span style="font-weight: 700; color: #443E5C;">연습</span> 프리즘 셋. 반복.</div>
+      <div><span style="font-weight: 700; color: #443E5C;">체크</span> 프리즘 안에 체크.</div>
+      <div><span style="font-weight: 700; color: #443E5C;">주간 Δ</span> 7색 띠로 채워진 프리즘. 검정 바탕 고정.</div>
     </div>'''
     # 번호 배지
     nums = ''
@@ -153,14 +153,14 @@ def marks_sheet():
                  f'</div>')
     numbers = f'<div style="display: flex; flex-direction: column; gap: 14px;">{nums}</div>'
     numbers_sub = ('<div style="display: grid; grid-template-columns: 1.2fr 0.8fr 0.9fr 0.5fr; gap: 12px; font-size: 11px; color: #555555; line-height: 1.5;">'
-                   '<div><span style="font-weight: 700; color: #2B2540;">개념 번호 1·2·3</span> 코너 배지 뒤에 붙는 정사각 번호. 단원 지도와 본문 헤더에 같은 것을 쓴다.</div>'
-                   '<div><span style="font-weight: 700; color: #2B2540;">풀이 단계 번호</span> 원형 외곽선. 예제 풀이 각 단계 앞.</div>'
-                   '<div><span style="font-weight: 700; color: #2B2540;">난이도 ▲</span> 연습 문제 번호 옆. 채운 개수 1~3.</div>'
-                   '<div><span style="font-weight: 700; color: #2B2540;">단원 번호</span> 영역 그라데이션 글자.</div></div>')
+                   '<div><span style="font-weight: 700; color: #443E5C;">개념 번호 1·2·3</span> 코너 배지 뒤에 붙는 정사각 번호. 단원 지도와 본문 헤더에 같은 것을 쓴다.</div>'
+                   '<div><span style="font-weight: 700; color: #443E5C;">풀이 단계 번호</span> 원형 외곽선. 예제 풀이 각 단계 앞.</div>'
+                   '<div><span style="font-weight: 700; color: #443E5C;">난이도 ▲</span> 연습 문제 번호 옆. 채운 개수 1~3.</div>'
+                   '<div><span style="font-weight: 700; color: #443E5C;">단원 번호</span> 영역 그라데이션 글자.</div></div>')
     body = f'''
   <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 40px;">
     <div style="font-size: 22px; font-weight: 700;">로고 · 마크 체계</div>
-    <div style="font-size: 13px; line-height: 1.6; color: #555555;">마스터 마크 하나(프리즘 + 들어오는 빛 + 나가는 빛 3줄)에서 코너 글리프 6종이 파생된다. 배지 바탕은 그 단원이 속한 영역의 그라데이션, 글리프는 잉크색 선. 주간 Δ만 잉크 바탕에 흰 선.</div>
+    <div style="font-size: 13px; line-height: 1.6; color: #555555;">마스터 마크는 표지의 유리 프리즘을 1도로 옮긴 두꺼운 삼각형 링. 코너 글리프 6종은 얇은 선 삼각형에 빛의 상태를 더한 파생형. 배지 바탕은 그 단원이 속한 영역의 그라데이션, 글리프는 잉크색 선. 주간 Δ만 잉크 바탕에 흰 선.</div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 28px; padding-top: 24px;">
     {cell('1. 마스터 마크', '표지 뒷면, 책등, 판권, 워크북 등 모든 곳에 쓰는 기본형.', master)}
@@ -185,9 +185,9 @@ def contents():
                    f'<div style="display: flex; flex-direction: column;">{items}</div></div>')
     body = f'''
   {topbar()}
-  <div style="display: flex; justify-content: space-between; align-items: flex-end; padding: 34px 0 18px 0; border-bottom: 2px solid #2B2540;">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; padding: 34px 0 18px 0; border-bottom: 2px solid #443E5C;">
     <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: {SYNE}; font-size: 11px; letter-spacing: 0.24em; font-weight: 800; color: #555555;">CONTENTS</div><div style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em;">차례</div></div>
-    <div style="display: flex; align-items: center; gap: 8px;">{glyph('mark', color='#2B2540', size=22)}<div style="font-size: 12px; font-weight: 700;">15 UNITS / 10 WEEKS</div></div>
+    <div style="display: flex; align-items: center; gap: 8px;">{glyph('mark', color='#443E5C', size=22)}<div style="font-size: 12px; font-weight: 700;">15 UNITS / 10 WEEKS</div></div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 22px; padding-top: 20px;">
     <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0;"><div style="display: flex; gap: 8px;">{badge('weekly','E','주간 Δ')}</div><div style="flex-grow: 1; border-bottom: 1px dotted #C8C8C8;"></div><div style="font-family: {SYNE}; font-size: 11px; color: #555555;">[p]</div></div>
@@ -202,19 +202,19 @@ def weekly():
     rows = ''
     for i in range(10):
         rows += (f'<div style="display: grid; grid-template-columns: 64px 1.3fr 0.7fr 1.6fr; gap: 0; border-bottom: 1px solid #E5E5E5; height: 58px;">'
-                 f'<div style="background: {cols[i]}; color: #2B2540; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: {SYNE}; font-weight: 800;"><div style="font-size: 9px; letter-spacing: 0.16em;">WEEK</div><div style="font-size: 20px; line-height: 1;">{i+1:02d}</div></div>'
+                 f'<div style="background: {cols[i]}; color: #443E5C; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: {SYNE}; font-weight: 800;"><div style="font-size: 9px; letter-spacing: 0.16em;">WEEK</div><div style="font-size: 20px; line-height: 1;">{i+1:02d}</div></div>'
                  f'<div style="border-right: 1px solid #E5E5E5;"></div><div style="border-right: 1px solid #E5E5E5;"></div><div></div></div>')
     body = f'''
   {topbar()}
-  <div style="display: flex; justify-content: space-between; align-items: flex-end; padding: 34px 0 16px 0; border-bottom: 2px solid #2B2540;">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; padding: 34px 0 16px 0; border-bottom: 2px solid #443E5C;">
     <div style="display: flex; flex-direction: column; gap: 10px;">{badge('weekly','E','주간 Δ')}<div style="font-size: 28px; font-weight: 700; letter-spacing: -0.02em;">10주 변화량 기록</div></div>
     <div style="font-size: 12px; line-height: 1.6; color: #555555; text-align: right; width: 250px;">매주 마지막 수업이 끝나면 적는다.<br>10주가 지나면 이 표가 무지개가 된다.</div>
   </div>
   <div style="display: grid; grid-template-columns: 64px 1.3fr 0.7fr 1.6fr; gap: 0; padding: 10px 0 6px 0; font-size: 11px; letter-spacing: 0.06em; color: #555555; font-weight: 600;">
     <div></div><div style="padding-left: 10px;">끝낸 단원</div><div style="padding-left: 10px;">틀린 문제 수</div><div style="padding-left: 10px;">한 줄 Δ (이번 주 달라진 것)</div>
   </div>
-  <div style="display: flex; flex-direction: column; border-top: 1px solid #2B2540;">{rows}</div>
-  <div style="display: flex; align-items: center; gap: 10px; padding-top: 14px; font-size: 12px; color: #555555;">{glyph('mark', color='#2B2540', size=18)}<div>Δ00부터 Δ15까지, 색이 라일락에서 분홍으로 바뀌는 동안 당신도 바뀐다.</div></div>
+  <div style="display: flex; flex-direction: column; border-top: 1px solid #443E5C;">{rows}</div>
+  <div style="display: flex; align-items: center; gap: 10px; padding-top: 14px; font-size: 12px; color: #555555;">{glyph('mark', color='#443E5C', size=18)}<div>Δ00부터 Δ15까지, 색이 라일락에서 분홍으로 바뀌는 동안 당신도 바뀐다.</div></div>
   {foot('6')}'''
     W('Weekly.dc.html', page(body))
 
@@ -222,12 +222,12 @@ def weekly():
 def opener():
     area = 'E'; a = AREAS[area]
     q = lambda n, t: (f'<div style="display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.6;">'
-                      f'<div style="width: 16px; height: 16px; border: 1.5px solid #2B2540; flex-shrink: 0; margin-top: 4px;"></div>'
+                      f'<div style="width: 16px; height: 16px; border: 1.5px solid #443E5C; flex-shrink: 0; margin-top: 4px;"></div>'
                       f'<div><span style="font-family: {SYNE}; font-weight: 700; color: {a["main"]};">{n}</span>&nbsp; {t}</div></div>')
     body = f'''
   {topbar()}
   {runhead(('Δ03','힘과 에너지 · 3 / 8'), 'WEEK 2', area)}
-  <div style="display: flex; flex-direction: column; gap: 4px; padding: 26px 0 22px 0; border-bottom: 2px solid #2B2540;">
+  <div style="display: flex; flex-direction: column; gap: 4px; padding: 26px 0 22px 0; border-bottom: 2px solid #443E5C;">
     <div style="font-family: {SYNE}; font-size: 104px; line-height: 0.9; font-weight: 800; letter-spacing: -0.02em; background: {a["g"]}; -webkit-background-clip: text; background-clip: text; color: transparent;">Δ03</div>
     <div style="font-size: 34px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; padding-top: 12px;">뉴턴 운동 법칙</div>
     <div style="font-size: 15px; line-height: 1.6; color: #555555;">힘은 물체를 움직이는 것이 아니라, 속도를 바꾸는 것이다.</div>
@@ -242,7 +242,7 @@ def opener():
   </div>
   <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 24px;">
     <div style="display: flex; align-items: center; gap: 10px;"><div style="font-size: 16px; font-weight: 700;">이 단원의 Δ</div></div>
-    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid #2B2540; border-bottom: 1px solid #2B2540;">
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid #443E5C; border-bottom: 1px solid #443E5C;">
       <div style="padding: 12px 14px 12px 0; border-right: 1px solid #E5E5E5; display: flex; flex-direction: column; gap: 8px;">
         <div style="font-size: 11px; letter-spacing: 0.08em; color: #555555; font-weight: 600;">단원 전</div>
         <div style="font-size: 13px; line-height: 1.6;">힘이 있어야 물체가 움직인다.</div>
@@ -322,7 +322,7 @@ def practice():
     <div style="display: flex; align-items: center; gap: 12px;">{badge('practice', area, 'Δ연습')}<div style="font-size: 12px; color: #555555;">▲ 기본 · ▲▲ 표준 · ▲▲▲ 도전</div></div>
     <div style="font-size: 11px; color: #555555;">정답과 풀이 [p]</div>
   </div>
-  <div style="display: flex; flex-direction: column; border-top: 2px solid #2B2540;">
+  <div style="display: flex; flex-direction: column; border-top: 2px solid #443E5C;">
     {prob(1, 1, '질량 4 kg인 물체에 12 N의 알짜힘이 작용한다. 가속도의 크기를 구하시오.', 2)}
     {prob(2, 1, '정지해 있던 2 kg 물체에 일정한 힘을 3초 동안 작용했더니 속력이 9 m/s가 되었다. 힘의 크기를 구하시오.', 2)}
     {prob(3, 2, '마찰이 없는 수평면에서 질량 1 kg인 A와 2 kg인 B를 실로 연결하고 B를 6 N으로 당긴다. 두 물체의 가속도와 실의 장력을 구하시오.', 3)}
@@ -341,41 +341,41 @@ def check():
   {topbar()}
   {runhead(('Δ03','뉴턴 운동 법칙'), 'Δ체크', area)}
   <div style="display: flex; align-items: center; gap: 12px; padding: 22px 0 14px 0;">{badge('check', area, 'Δ체크')}<div style="font-size: 12px; color: #555555;">출발선의 세 질문을 다시 푼다. 이번엔 이유까지.</div></div>
-  <div style="display: flex; flex-direction: column; border-top: 2px solid #2B2540;">
+  <div style="display: flex; flex-direction: column; border-top: 2px solid #443E5C;">
     {q(1, '책상 위에 놓인 책은 정지해 있다. 책에 작용하는 힘은 없는가, 아니면 있는데 합이 0인가?')}
     {q(2, '같은 힘으로 밀 때 2 kg 수레와 4 kg 수레의 가속도 비는 얼마인가?')}
     {q(3, '말이 수레를 당기는 힘과 수레가 말을 당기는 힘의 크기가 같다면, 수레는 왜 앞으로 가는가?')}
   </div>
   <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 24px;">
     <div style="font-size: 16px; font-weight: 700;">이 단원의 Δ · 단원 후</div>
-    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid #2B2540; border-bottom: 1px solid #2B2540;">
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid #443E5C; border-bottom: 1px solid #443E5C;">
       <div style="padding: 12px 14px 12px 0; border-right: 1px solid #E5E5E5; display: flex; flex-direction: column; gap: 8px; color: #999999;">
         <div style="font-size: 11px; letter-spacing: 0.08em; font-weight: 600;">단원 전 (내가 믿었던 것)</div>
         <div style="font-size: 13px; line-height: 1.6;">힘이 있어야 물체가 움직인다.</div><div style="font-size: 13px; line-height: 1.6;">무거운 물체가 더 빨리 떨어진다.</div><div style="font-size: 13px; line-height: 1.6;">작용과 반작용은 서로 상쇄된다.</div>
       </div>
       <div style="padding: 12px 0 12px 14px; display: flex; flex-direction: column; gap: 8px;">
         <div style="font-size: 11px; letter-spacing: 0.08em; color: {a["main"]}; font-weight: 600;">단원 후 (지금 아는 것)</div>
-        <div style="height: 21px; border-bottom: 1px solid #2B2540;"></div><div style="height: 21px; border-bottom: 1px solid #2B2540;"></div><div style="height: 21px; border-bottom: 1px solid #2B2540;"></div>
+        <div style="height: 21px; border-bottom: 1px solid #443E5C;"></div><div style="height: 21px; border-bottom: 1px solid #443E5C;"></div><div style="height: 21px; border-bottom: 1px solid #443E5C;"></div>
       </div>
     </div>
   </div>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 24px;">
     <div style="display: flex; flex-direction: column; gap: 10px;">
       <div style="font-size: 12px; font-weight: 700;">틀린 연습 문제 번호</div>
-      <div style="display: flex; gap: 8px;">{''.join(f'<div style="width: 34px; height: 34px; border: 1.5px solid #2B2540; display: flex; align-items: center; justify-content: center; font-family: {SYNE}; font-size: 12px; font-weight: 700; color: #BBBBBB;">{i}</div>' for i in range(1,7))}</div>
+      <div style="display: flex; gap: 8px;">{''.join(f'<div style="width: 34px; height: 34px; border: 1.5px solid #443E5C; display: flex; align-items: center; justify-content: center; font-family: {SYNE}; font-size: 12px; font-weight: 700; color: #BBBBBB;">{i}</div>' for i in range(1,7))}</div>
       <div style="font-size: 11px; color: #555555;">틀린 번호에 색을 칠한다.</div>
     </div>
     <div style="display: flex; flex-direction: column; gap: 10px;">
       <div style="font-size: 12px; font-weight: 700;">이 단원의 나의 Δ</div>
       <div style="display: flex; gap: 12px; align-items: center;">
-        {''.join(f'<svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" style="display: block;"><path d="M12 3 L21.5 20 L2.5 20 Z" fill="none" stroke="#2B2540" stroke-width="1.6" stroke-linejoin="round"></path></svg>' for _ in range(3))}
+        {''.join(f'<svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" style="display: block;"><path d="M12 3 L21.5 20 L2.5 20 Z" fill="none" stroke="#443E5C" stroke-width="1.6" stroke-linejoin="round"></path></svg>' for _ in range(3))}
         <div style="font-size: 11px; color: #555555; line-height: 1.5;">이해한 만큼 삼각형을 칠한다.<br>▲ 들었다 · ▲▲ 풀 수 있다 · ▲▲▲ 설명할 수 있다</div>
       </div>
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 22px;">
     <div style="font-size: 12px; font-weight: 700;">한 줄 Δ</div>
-    <div style="height: 26px; border-bottom: 1px solid #2B2540;"></div>
+    <div style="height: 26px; border-bottom: 1px solid #443E5C;"></div>
   </div>
   {foot('47')}'''
     W('Check.dc.html', page(body))
