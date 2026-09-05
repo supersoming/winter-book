@@ -4,17 +4,17 @@
     { "id": "inside", "name": "내지 · 코너 체계" }
   ],
   "artboards": [
-    { "file": "Main.dc.html",    "title": "A · 기호형",   "x": 0,    "y": 0,    "w": 710, "h": 971, "page": "covers" },
-    { "file": "CoverB.dc.html",  "title": "B · 그래프형", "x": 810,  "y": 0,    "w": 710, "h": 971, "page": "covers" },
-    { "file": "CoverC.dc.html",  "title": "C · 편집형",   "x": 1620, "y": 0,    "w": 710, "h": 971, "page": "covers" },
-    { "file": "Series.dc.html",  "title": "시리즈 확장",  "x": 0,    "y": 1130, "w": 1000, "h": 570, "page": "covers" },
+    { "file": "Main.dc.html",    "title": "A · 다크 프리즘",   "x": 0,    "y": 0,    "w": 710, "h": 971, "page": "covers" },
+    { "file": "CoverB.dc.html",  "title": "B · 홀로그램", "x": 810,  "y": 0,    "w": 710, "h": 971, "page": "covers" },
+    { "file": "CoverC.dc.html",  "title": "C · 스펙트럼 띠",   "x": 1620, "y": 0,    "w": 710, "h": 971, "page": "covers" },
+    { "file": "Series.dc.html",  "title": "시리즈 확장",  "x": 0,    "y": 1130, "w": 1000, "h": 600, "page": "covers" },
     { "file": "Opener.dc.html",  "title": "단원 도입",    "x": 0,    "y": 0,    "w": 710, "h": 971, "page": "inside" },
     { "file": "Concept.dc.html", "title": "개념 페이지",  "x": 810,  "y": 0,    "w": 710, "h": 971, "page": "inside" },
-    { "file": "System.dc.html",  "title": "코너 체계",    "x": 1620, "y": 0,    "w": 1000, "h": 760, "page": "inside" }
+    { "file": "System.dc.html",  "title": "코너 체계",    "x": 1620, "y": 0,    "w": 1000, "h": 820, "page": "inside" }
   ],
   "annotations": [
-    { "id": "cover-note", "x": 0, "y": -150, "w": 700, "page": "covers", "text": "세 방향 모두 같은 정보(제목·부제·대상·구성)를 담고 있음. A는 시리즈로 이어가기 가장 쉬운 형태, B는 물리 내용이 표지에 드러남, C는 서점 교재 느낌의 편집형. 판형은 4×6배판(188×257mm) 기준." },
-    { "id": "inside-note", "x": 0, "y": -130, "w": 700, "page": "inside", "text": "내지 샘플은 Δ03 뉴턴 운동 법칙으로 작성. 단원 도입 → 개념 페이지 순서. 코너 체계표는 인쇄용 아니고 디자인 기준표." }
+    { "id": "cover-note", "x": 0, "y": -150, "w": 700, "page": "covers", "text": "프리즘 컨셉: Δ = 프리즘. 백색광이 들어와 일곱 색으로 갈라진다.\nA 다크 프리즘: 검은 바탕 위 유리 프리즘과 빛의 부채.\nB 홀로그램: 홀로그래픽 포일 같은 전면 무지개 바탕 + 유리 Δ.\nC 스펙트럼 띠: 흰 종이 위 7색 띠로 쌓은 Δ, 굵은 타이포.\n판형 4×6배판(188×257mm)." },
+    { "id": "inside-note", "x": 0, "y": -130, "w": 700, "page": "inside", "text": "내지는 영역별 스펙트럼 색을 쓴다. Δ03은 힘과 에너지라 빨강–주황. 페이지 맨 위 7색 띠는 전 페이지 공통." }
   ],
   "launch": { "view": "canvas", "page": "covers" }
 }
