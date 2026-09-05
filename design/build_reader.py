@@ -4,7 +4,9 @@ import re, sys, os, glob, html
 import markdown
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-AREA = {'00': ('준비', '#E07A95', '#FFF3F5', '#3A2A33'), '01': ('힘과 에너지', '#E07A95', '#FFF3F5', '#3A2A33')}
+AREA = {n: ('힘과 에너지', '#E07A95', '#FFF3F5', '') for n in ['00','01','02','03','04','05','06','07','08']}
+AREA.update({n: ('전기와 자기', '#5EAE88', '#EEF8F2', '') for n in ['09','10','11','12']})
+AREA.update({n: ('빛과 물질', '#8A84E2', '#F1F0FF', '') for n in ['13','14','15']})
 
 def tex(s):
     """간단한 LaTeX → 읽을 수 있는 유니코드."""
