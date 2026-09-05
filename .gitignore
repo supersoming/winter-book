@@ -1,3 +1,4 @@
 # 조립된 캔버스 페이지 (디자인 원본 *.dc.html 과 canvas.json 에서 재생성)
 design/canvas/delta-physics-winter.html
 node_modules/
+design/reader.html
