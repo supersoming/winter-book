@@ -1,20 +1,29 @@
 {
   "pages": [
     { "id": "covers", "name": "표지 시안" },
-    { "id": "inside", "name": "내지 · 코너 체계" }
+    { "id": "inside", "name": "내지" },
+    { "id": "marks", "name": "로고 · 마크" }
   ],
   "artboards": [
-    { "file": "Main.dc.html",    "title": "A · 다크 프리즘",   "x": 0,    "y": 0,    "w": 710, "h": 971, "page": "covers" },
-    { "file": "CoverB.dc.html",  "title": "B · 홀로그램", "x": 810,  "y": 0,    "w": 710, "h": 971, "page": "covers" },
-    { "file": "CoverC.dc.html",  "title": "C · 스펙트럼 띠",   "x": 1620, "y": 0,    "w": 710, "h": 971, "page": "covers" },
-    { "file": "Series.dc.html",  "title": "시리즈 확장",  "x": 0,    "y": 1130, "w": 1000, "h": 600, "page": "covers" },
-    { "file": "Opener.dc.html",  "title": "단원 도입",    "x": 0,    "y": 0,    "w": 710, "h": 971, "page": "inside" },
-    { "file": "Concept.dc.html", "title": "개념 페이지",  "x": 810,  "y": 0,    "w": 710, "h": 971, "page": "inside" },
-    { "file": "System.dc.html",  "title": "코너 체계",    "x": 1620, "y": 0,    "w": 1000, "h": 820, "page": "inside" }
+    { "file": "Main.dc.html",     "title": "A · 다크 프리즘", "x": 0,    "y": 0,    "w": 710,  "h": 971,  "page": "covers" },
+    { "file": "CoverB.dc.html",   "title": "B · 홀로그램",   "x": 810,  "y": 0,    "w": 710,  "h": 971,  "page": "covers" },
+    { "file": "CoverC.dc.html",   "title": "C · 스펙트럼 띠", "x": 1620, "y": 0,    "w": 710,  "h": 971,  "page": "covers" },
+    { "file": "Series.dc.html",   "title": "시리즈 확장",    "x": 0,    "y": 1130, "w": 1000, "h": 600,  "page": "covers" },
+
+    { "file": "Contents.dc.html", "title": "차례",          "x": 0,    "y": 0,    "w": 710,  "h": 971,  "page": "inside" },
+    { "file": "Weekly.dc.html",   "title": "주간 Δ 기록표", "x": 810,  "y": 0,    "w": 710,  "h": 971,  "page": "inside" },
+    { "file": "Opener.dc.html",   "title": "단원 도입 · Δ0 출발선", "x": 1620, "y": 0, "w": 710, "h": 971, "page": "inside" },
+    { "file": "Concept.dc.html",  "title": "Δ개념 + Δ예제", "x": 0,    "y": 1130, "w": 710,  "h": 971,  "page": "inside" },
+    { "file": "Practice.dc.html", "title": "Δ연습",         "x": 810,  "y": 1130, "w": 710,  "h": 971,  "page": "inside" },
+    { "file": "Check.dc.html",    "title": "Δ체크",         "x": 1620, "y": 1130, "w": 710,  "h": 971,  "page": "inside" },
+    { "file": "System.dc.html",   "title": "코너 · 색 체계", "x": 0,    "y": 2260, "w": 1000, "h": 820,  "page": "inside" },
+
+    { "file": "Marks.dc.html",    "title": "로고 · 마크 시트", "x": 0,  "y": 0,    "w": 1000, "h": 1120, "page": "marks" }
   ],
   "annotations": [
     { "id": "cover-note", "x": 0, "y": -150, "w": 700, "page": "covers", "text": "프리즘 컨셉: Δ = 프리즘. 백색광이 들어와 일곱 색으로 갈라진다.\nA 다크 프리즘: 검은 바탕 위 유리 프리즘과 빛의 부채.\nB 홀로그램: 홀로그래픽 포일 같은 전면 무지개 바탕 + 유리 Δ.\nC 스펙트럼 띠: 흰 종이 위 7색 띠로 쌓은 Δ, 굵은 타이포.\n판형 4×6배판(188×257mm)." },
-    { "id": "inside-note", "x": 0, "y": -130, "w": 700, "page": "inside", "text": "내지는 영역별 스펙트럼 색을 쓴다. Δ03은 힘과 에너지라 빨강–주황. 페이지 맨 위 7색 띠는 전 페이지 공통." }
+    { "id": "inside-note", "x": 0, "y": -150, "w": 760, "page": "inside", "text": "한 단원이 흐르는 순서대로: 차례 → 주간 Δ(책 앞) → 단원 도입(Δ0 출발선) → Δ개념+Δ예제 → Δ연습 → Δ체크.\n샘플 단원은 Δ03 뉴턴 운동 법칙(힘과 에너지 = 빨강–주황). 전기와 자기 단원이면 같은 틀에 초록, 빛과 물질이면 보라로 바뀐다.\n[p] 는 쪽수 자리." },
+    { "id": "marks-note", "x": 0, "y": -110, "w": 700, "page": "marks", "text": "마스터 마크 하나에서 코너 글리프 6종이 파생. 내지 페이지의 모든 배지·번호는 이 시트의 것을 그대로 쓴다." }
   ],
-  "launch": { "view": "canvas", "page": "covers" }
+  "launch": { "view": "canvas", "page": "inside" }
 }
