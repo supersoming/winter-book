@@ -9,6 +9,9 @@ AREA.update({n: ('전기와 자기', '#5EAE88', '#EEF8F2', '') for n in ['08','0
 AREA.update({n: ('빛과 물질', '#8A84E2', '#F1F0FF', '') for n in ['12','13','14','15']})
 AREA.update({'R1': ('힘과 에너지', '#E07A95', '#FFF3F5', ''), 'R2': ('전기와 자기', '#5EAE88', '#EEF8F2', ''), 'R3': ('빛과 물질', '#8A84E2', '#F1F0FF', ''), 'F1': ('전 범위', '#443E5C', '#F3F1F8', '')})
 
+GREEK = {r'\\lambda':'λ', r'\\theta':'θ', r'\\gamma':'γ', r'\\mu':'μ', r'\\pi':'π', r'\\tau':'τ', r'\\Delta':'Δ', r'\\sum':'Σ', r'\\omega':'ω', r'\\alpha':'α', r'\\beta':'β', r'\\epsilon':'ε', r'\\phi':'φ', r'\\Phi':'Φ', r'\\rho':'ρ', r'\\sigma':'σ',
+         r'\\times':'×', r'\\cdot':'·', r'\\approx':'≈', r'\\neq':'≠', r'\\geq':'≥', r'\\leq':'≤', r'\\ge':'≥', r'\\le':'≤', r'\\to':'→', r'\\rightarrow':'→', r'\\infty':'∞', r'\\quad':'  ', r'\\qquad':'    ', r'\\,':' ', r'\\;':' ', r'\\propto':'∝', r'\\sin':'sin', r'\\cos':'cos', r'\\tan':'tan', r'\\ln':'ln', r'\\sqrt':'√'}
+SUP = str.maketrans('0123456789+-()n', '⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁽⁾ⁿ')
 def tex(s):
     """간단한 LaTeX → 읽을 수 있는 유니코드."""
     s = s.replace(r'\ ', ' ')
@@ -17,10 +20,13 @@ def tex(s):
     s = re.sub(r'\\sqrt\{([^{}]*)\}', r'√(\1)', s)
     s = re.sub(r'\\vec\{([^{}]*)\}', r'\1⃗', s)
     s = re.sub(r'\\bar ([a-zA-Z])', r'\1̄', s)
-    s = s.replace(r'\Delta', 'Δ').replace(r'\times', '×').replace(r'\neq', '≠').replace(r'\geq', '≥')
-    s = re.sub(r'\^\{?2\}?', '²', s); s = re.sub(r'\^\{([^}]*)\}', r'<sup>\1</sup>', s)
+    s = re.sub(r'\\bar\{([^}]*)\}', r'\1̄', s)
+    for k, v in GREEK.items(): s = re.sub(k + r'(?![a-zA-Z])', v, s)
+    s = re.sub(r'\^\{([^}]*)\}', lambda m: m.group(1).translate(SUP) if re.fullmatch(r'[0-9+\-()n]+', m.group(1)) else f'<sup>{m.group(1)}</sup>', s)
+    s = re.sub(r'\^([0-9a-zA-Z])', lambda m: m.group(1).translate(SUP) if m.group(1).isdigit() else f'<sup>{m.group(1)}</sup>', s)
     s = re.sub(r'_\{([^}]*)\}', r'<sub>\1</sub>', s); s = re.sub(r'_([a-zA-Z0-9])', r'<sub>\1</sub>', s)
     s = re.sub(r'\(([^()/]{1,3})\)/\(([^()/]{1,3})\)', r'\1/\2', s)
+    s = s.replace('{', '').replace('}', '')
     return s.strip()
 
 def pre(md):
