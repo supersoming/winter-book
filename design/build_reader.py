@@ -7,6 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AREA = {n: ('힘과 에너지', '#E07A95', '#FFF3F5', '') for n in ['00','01','02','03','04','05','06','07']}
 AREA.update({n: ('전기와 자기', '#5EAE88', '#EEF8F2', '') for n in ['08','09','10','11']})
 AREA.update({n: ('빛과 물질', '#8A84E2', '#F1F0FF', '') for n in ['12','13','14','15']})
+AREA.update({'R1': ('힘과 에너지', '#E07A95', '#FFF3F5', ''), 'R2': ('전기와 자기', '#5EAE88', '#EEF8F2', ''), 'R3': ('빛과 물질', '#8A84E2', '#F1F0FF', '')})
 
 def tex(s):
     """간단한 LaTeX → 읽을 수 있는 유니코드."""
@@ -27,7 +28,7 @@ def pre(md):
     md = re.sub(r'\$([^$\n]+?)\$', lambda m: f'<span class="m">{tex(m.group(1))}</span>', md)
     return md
 
-BADGE = {'Δ0 출발선': 'start', 'Δ개념': 'concept', 'Δ예제': 'example', 'Δ연습': 'practice', 'Δ체크': 'check'}
+BADGE = {'Δ0 출발선': 'start', 'Δ개념': 'concept', 'Δ예제': 'example', 'Δ연습': 'practice', 'Δ체크': 'check', '영역 지도': 'concept', '주간 Δ': 'weekly'}
 GLYPH = {
  'start':   '<path d="M12 2.5 L19.5 16 L4.5 16 Z"/><path d="M2 21 H22"/><circle cx="4.5" cy="21" r="2" fill="currentColor" stroke="none"/>',
  'concept': '<path d="M13 4 L22 20 L4 20 Z"/><path d="M0.5 12 H9" stroke-width="2.6"/>',
@@ -35,6 +36,7 @@ GLYPH = {
  'practice':'<path d="M7 3 L12 11.5 L2 11.5 Z" stroke-width="1.8"/><path d="M17 3 L22 11.5 L12 11.5 Z" stroke-width="1.8"/><path d="M12 12.5 L17 21 L7 21 Z" stroke-width="1.8"/>',
  'check':   '<path d="M12 2.5 L21.5 19.5 L2.5 19.5 Z"/><path d="M8.5 14 L11 16.5 L16 10.5" stroke-width="2.4"/>',
  'answers': '<path d="M12 2 L23 21 L1 21 Z M12 8.5 L17.6 18 L6.4 18 Z" fill="currentColor" stroke="none" fill-rule="evenodd"/>',
+ 'weekly':  '<path d="M12 2 L22 20 L2 20 Z" fill="currentColor" stroke="none"/>',
 }
 def svg(k): return f'<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">{GLYPH[k]}</svg>'
 
@@ -80,7 +82,7 @@ def post(h):
 
 def unit(path):
     src = open(path, encoding='utf-8').read()
-    m = re.match(r'# (Δ\d\d) (.+)\n', src); code, title = m.group(1), m.group(2)
+    m = re.match(r'# (Δ[0-9R]\d) (.+)\n', src); code, title = m.group(1), m.group(2)
     meta = re.search(r'> 영역: (.+)\n> 한 줄: (.+)\n', src)
     body = src[meta.end():]
     h = markdown.markdown(pre(body), extensions=['tables'])
