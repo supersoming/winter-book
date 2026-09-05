@@ -4,9 +4,9 @@ import re, sys, os, glob, html
 import markdown
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-AREA = {n: ('힘과 에너지', '#E07A95', '#FFF3F5', '') for n in ['00','01','02','03','04','05','06','07','08']}
-AREA.update({n: ('전기와 자기', '#5EAE88', '#EEF8F2', '') for n in ['09','10','11','12']})
-AREA.update({n: ('빛과 물질', '#8A84E2', '#F1F0FF', '') for n in ['13','14','15']})
+AREA = {n: ('힘과 에너지', '#E07A95', '#FFF3F5', '') for n in ['00','01','02','03','04','05','06','07']}
+AREA.update({n: ('전기와 자기', '#5EAE88', '#EEF8F2', '') for n in ['08','09','10','11']})
+AREA.update({n: ('빛과 물질', '#8A84E2', '#F1F0FF', '') for n in ['12','13','14','15']})
 
 def tex(s):
     """간단한 LaTeX → 읽을 수 있는 유니코드."""
@@ -90,7 +90,7 @@ def unit(path):
     return dict(code=code, n=n, title=title.replace(' — ', ' · '), meta=meta.group(1), line=meta.group(2), html=h, area=area, main=main, tint=tint)
 
 units = [unit(p) for p in sorted(glob.glob(os.path.join(ROOT, 'manuscript', '*.md')))]
-upcoming = [('Δ02','등가속도 운동과 그래프'),('Δ03','뉴턴 운동 법칙'),('Δ04','운동 법칙의 적용'),('Δ05','평형과 안정성'),('Δ06','운동량과 충격량'),('Δ07','일과 역학적 에너지'),('Δ08','열과 에너지'),('Δ09','전기장과 전위'),('Δ10','전류와 전기 회로'),('Δ11','전류의 자기 작용'),('Δ12','전자기 유도와 전자기파'),('Δ13','파동과 빛의 성질'),('Δ14','빛과 물질의 이중성'),('Δ15','원자와 에너지 준위')]
+upcoming = [('Δ07','일과 에너지, 열과 효율'),('Δ08','전기장과 전위차'),('Δ09','전기 회로, 소비 전력, 축전기'),('Δ10','자성체와 전류의 자기 작용'),('Δ11','전자기 유도와 에너지 전달'),('Δ12','빛의 파동성과 굴절'),('Δ13','빛과 물질의 이중성'),('Δ14','원자와 스펙트럼, 에너지띠와 반도체'),('Δ15','시간과 공간의 상대성')]
 done = {u['code'] for u in units}
 
 nav = ''.join(f'<a href="#{u["code"]}" class="nv"><span class="nc">{u["code"]}</span><span>{html.escape(u["title"].split(" · ")[0])}</span></a>' for u in units)

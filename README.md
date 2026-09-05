@@ -7,6 +7,8 @@
 | `docs/01-concept.md` | 컨셉·네이밍·시리즈 규칙·디자인 토큰·내지 코너 체계 |
 | `docs/02-curriculum.md` | 15단원 구성과 주차 배분 초안 |
 | `docs/03-syllabus.md` | 단원별 세부 목차 (출발선·개념·예제·연습·쪽수) |
+| `docs/04-textbook-map.md` | 교과서(2022 개정 물리학) 소단원과 이 책 단원 대조표 |
+| `manuscript/` | 단원별 원고 (마크다운) |
 | `design/canvas/` | 표지 시안·내지 샘플 디자인 원본 (`*.dc.html`, `canvas.json`) |
 
 디자인 캔버스: https://claude.ai/code/artifact/2f8d81a6-5ae9-4b4b-b663-5a844b8d7dc7

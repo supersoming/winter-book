@@ -5,9 +5,9 @@ OUT = os.path.join(os.path.dirname(__file__), 'canvas')
 
 SPEC = ['#FFB5C2', '#FFCFB0', '#FFF1B5', '#C6F0D6', '#B5E6F7', '#BFCBFF', '#DABDFF']
 AREAS = {
-    'E': dict(name='힘과 에너지', rng='Δ01–08', g='linear-gradient(135deg, #FFB5C2, #FFCFB0)', main='#E07A95', tint='#FFF3F5', c1='#FFB5C2', c2='#FFCFB0'),
-    'M': dict(name='전기와 자기', rng='Δ09–12', g='linear-gradient(135deg, #BDEBD2, #F3F0B8)', main='#5EAE88', tint='#EEF8F2', c1='#A9E3C6', c2='#EDE9A6'),
-    'L': dict(name='빛과 물질',   rng='Δ13–15', g='linear-gradient(135deg, #BFCBFF, #DABDFF)', main='#8A84E2', tint='#F1F0FF', c1='#BFCBFF', c2='#DABDFF'),
+    'E': dict(name='힘과 에너지', rng='Δ01–07', g='linear-gradient(135deg, #FFB5C2, #FFCFB0)', main='#E07A95', tint='#FFF3F5', c1='#FFB5C2', c2='#FFCFB0'),
+    'M': dict(name='전기와 자기', rng='Δ08–11', g='linear-gradient(135deg, #BDEBD2, #F3F0B8)', main='#5EAE88', tint='#EEF8F2', c1='#A9E3C6', c2='#EDE9A6'),
+    'L': dict(name='빛과 물질',   rng='Δ12–15', g='linear-gradient(135deg, #BFCBFF, #DABDFF)', main='#8A84E2', tint='#F1F0FF', c1='#BFCBFF', c2='#DABDFF'),
 }
 FONT = "<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap\">"
 SYNE = "'Syne', 'IBM Plex Sans KR', sans-serif"
@@ -149,7 +149,7 @@ def marks_sheet():
                  f'<div style="width: 1px; height: 28px; background: #E5E5E5;"></div>'
                  f'<div style="display: flex; gap: 10px;">{difficulty(1, area)}{difficulty(2, area)}{difficulty(3, area)}</div>'
                  f'<div style="width: 1px; height: 28px; background: #E5E5E5;"></div>'
-                 f'<div style="font-family: {SYNE}; font-size: 40px; font-weight: 800; line-height: 1; background: {AREAS[area]["g"]}; -webkit-background-clip: text; background-clip: text; color: transparent;">{ {"E":"Δ03","M":"Δ09","L":"Δ13"}[area] }</div>'
+                 f'<div style="font-family: {SYNE}; font-size: 40px; font-weight: 800; line-height: 1; background: {AREAS[area]["g"]}; -webkit-background-clip: text; background-clip: text; color: transparent;">{ {"E":"Δ03","M":"Δ08","L":"Δ12"}[area] }</div>'
                  f'</div>')
     numbers = f'<div style="display: flex; flex-direction: column; gap: 14px;">{nums}</div>'
     numbers_sub = ('<div style="display: grid; grid-template-columns: 1.2fr 0.8fr 0.9fr 0.5fr; gap: 12px; font-size: 11px; color: #555555; line-height: 1.5;">'
@@ -172,9 +172,9 @@ def marks_sheet():
 
 # ================= 2. 목차 =================
 def contents():
-    units = [('E', [('Δ00','출발선 · 벡터, 단위, 그래프 읽기'),('Δ01','운동의 표현'),('Δ02','등가속도 운동과 그래프'),('Δ03','뉴턴 운동 법칙'),('Δ04','운동 법칙의 적용'),('Δ05','평형과 안정성'),('Δ06','운동량과 충격량'),('Δ07','일과 역학적 에너지'),('Δ08','열과 에너지')]),
-             ('M', [('Δ09','전기장과 전위'),('Δ10','전류와 전기 회로'),('Δ11','전류의 자기 작용'),('Δ12','전자기 유도와 전자기파')]),
-             ('L', [('Δ13','파동과 빛의 성질'),('Δ14','빛과 물질의 이중성'),('Δ15','원자와 에너지 준위')])]
+    units = [('E', [('Δ00','출발선 · 벡터, 단위, 그래프 읽기'),('Δ01','운동의 표현'),('Δ02','등가속도 운동과 그래프'),('Δ03','뉴턴 운동 법칙'),('Δ04','운동 법칙의 적용'),('Δ05','평형과 구조물의 안정성'),('Δ06','운동량과 충격량'),('Δ07','일과 에너지, 열과 효율')]),
+             ('M', [('Δ08','전기장과 전위차'),('Δ09','전기 회로, 소비 전력, 축전기'),('Δ10','자성체와 전류의 자기 작용'),('Δ11','전자기 유도와 에너지 전달')]),
+             ('L', [('Δ12','빛의 파동성과 굴절'),('Δ13','빛과 물질의 이중성'),('Δ14','원자와 스펙트럼, 에너지띠와 반도체'),('Δ15','시간과 공간의 상대성')])]
     blocks = ''
     for area, lst in units:
         a = AREAS[area]
@@ -226,7 +226,7 @@ def opener():
                       f'<div><span style="font-family: {SYNE}; font-weight: 700; color: {a["main"]};">{n}</span>&nbsp; {t}</div></div>')
     body = f'''
   {topbar()}
-  {runhead(('Δ03','힘과 에너지 · 3 / 8'), 'WEEK 2', area)}
+  {runhead(('Δ03','힘과 에너지 · 3 / 7'), 'WEEK 2', area)}
   <div style="display: flex; flex-direction: column; gap: 4px; padding: 26px 0 22px 0; border-bottom: 2px solid #443E5C;">
     <div style="font-family: {SYNE}; font-size: 104px; line-height: 0.9; font-weight: 800; letter-spacing: -0.02em; background: {a["g"]}; -webkit-background-clip: text; background-clip: text; color: transparent;">Δ03</div>
     <div style="font-size: 34px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; padding-top: 12px;">뉴턴 운동 법칙</div>
