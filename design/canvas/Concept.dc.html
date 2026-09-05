@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+    a { color: #2E6BB0; } a:hover { color: #1E4F8A; }
+  </style>
+</helmet>
+<div style="position: relative; width: 710px; height: 971px; background: #FFFFFF; color: #17202E; box-sizing: border-box; padding: 44px 52px 40px 52px; display: flex; flex-direction: column; gap: 22px; overflow: hidden;">
+  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.08em; color: #5B6778; padding-bottom: 10px; border-bottom: 1px solid #D8D3CA;">
+    <div><span style="font-family: 'Space Grotesk', 'IBM Plex Sans KR', sans-serif; color: #2E6BB0;">Δ03</span> 뉴턴 운동 법칙</div>
+    <div>Δ개념 2</div>
+  </div>
+
+  <div style="display: flex; gap: 28px; flex-grow: 1;">
+    <div style="display: flex; flex-direction: column; gap: 20px; flex-grow: 1; min-width: 0;">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-family: 'Space Grotesk', 'IBM Plex Sans KR', sans-serif; font-size: 13px; color: #2E6BB0; letter-spacing: 0.06em;">Δ개념 2</div>
+        <div style="font-size: 26px; font-weight: 700; letter-spacing: -0.01em;">가속도 법칙</div>
+      </div>
+
+      <div style="font-size: 14px; line-height: 1.75; text-wrap: pretty;">물체에 알짜힘이 작용하면 물체는 알짜힘의 방향으로 가속된다. 가속도의 크기는 알짜힘에 비례하고 질량에 반비례한다. 여기서 "움직인다"가 아니라 "속도가 변한다"는 점이 핵심이다. 힘이 0이면 속도는 변하지 않을 뿐, 물체가 멈추는 것이 아니다.</div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px 20px; background: #F6F3EE; border-top: 2px solid #17202E;">
+        <div style="font-size: 11px; letter-spacing: 0.08em; color: #5B6778; font-weight: 600;">정의</div>
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <div style="font-family: 'Space Grotesk', 'IBM Plex Sans KR', sans-serif; font-size: 30px; font-weight: 500;"><i>F</i> = <i>ma</i></div>
+          <div style="font-size: 12px; line-height: 1.6; color: #5B6778;"><i>F</i> 알짜힘 [N] · <i>m</i> 질량 [kg] · <i>a</i> 가속도 [m/s²]</div>
+        </div>
+        <div style="font-size: 13px; line-height: 1.6;">1 N은 1 kg의 물체에 1 m/s²의 가속도를 만드는 힘이다.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; border: 1.5px solid #17202E; padding: 18px 20px;">
+        <div style="display: flex; align-items: baseline; gap: 10px;">
+          <div style="font-family: 'Space Grotesk', 'IBM Plex Sans KR', sans-serif; font-size: 14px; color: #2E6BB0;">Δ예제</div>
+          <div style="font-size: 14px; font-weight: 700;">두 물체를 함께 밀 때</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #5B6778; margin-left: auto;">▲▲</div>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.7;">마찰이 없는 수평면에 질량 2 kg인 물체 A와 3 kg인 물체 B가 맞닿아 놓여 있다. A를 10 N의 힘으로 B 쪽으로 밀 때, 두 물체의 가속도와 A가 B를 미는 힘의 크기를 구하시오.</div>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 10px; border-top: 1px dashed #B7C6DA;">
+          <div style="display: flex; gap: 10px; font-size: 13px; line-height: 1.65;"><div style="font-family: 'Space Grotesk', sans-serif; color: #2E6BB0; width: 18px; flex-shrink: 0;">1</div><div>A와 B를 한 덩어리로 본다. 전체 질량 5 kg, 알짜힘 10 N이므로 <i>a</i> = 10 / 5 = 2 m/s².</div></div>
+          <div style="display: flex; gap: 10px; font-size: 13px; line-height: 1.65;"><div style="font-family: 'Space Grotesk', sans-serif; color: #2E6BB0; width: 18px; flex-shrink: 0;">2</div><div>B만 따로 본다. B에 작용하는 알짜힘은 A가 미는 힘뿐이다. <i>F</i> = 3 × 2 = 6 N.</div></div>
+          <div style="display: flex; gap: 10px; font-size: 13px; line-height: 1.65;"><div style="font-family: 'Space Grotesk', sans-serif; color: #2E6BB0; width: 18px; flex-shrink: 0;">3</div><div>확인: A에는 10 N과 B가 미는 반작용 6 N이 반대로 작용하므로 알짜힘 4 N, 2 × 2 = 4 N. 맞다.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="width: 150px; flex-shrink: 0; display: flex; flex-direction: column; gap: 18px; padding-top: 44px; border-left: 1px solid #D8D3CA; padding-left: 18px;">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-size: 10px; letter-spacing: 0.08em; color: #5B6778; font-weight: 600;">Δ메모</div>
+        <div style="font-size: 12px; line-height: 1.6;">"알짜힘"은 그 물체에 작용하는 모든 힘의 합. 계를 어떻게 잡느냐에 따라 알짜힘이 달라진다.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-size: 10px; letter-spacing: 0.08em; color: #5B6778; font-weight: 600;">자주 틀리는 곳</div>
+        <div style="font-size: 12px; line-height: 1.6;">B에 10 N이 그대로 전달된다고 생각하는 것. 힘은 "전달"되지 않고 각 물체마다 새로 따진다.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-size: 10px; letter-spacing: 0.08em; color: #5B6778; font-weight: 600;">연결</div>
+        <div style="font-size: 12px; line-height: 1.6;"><span style="font-family: 'Space Grotesk', sans-serif; color: #2E6BB0;">Δ04</span> 도르래·빗면에서 같은 방법으로 계를 나눈다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; font-size: 11px; color: #5B6778; padding-top: 10px; border-top: 1px solid #D8D3CA;">
+    <div>델타 물리학 · 겨울</div>
+    <div style="font-family: 'Space Grotesk', sans-serif;">41</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

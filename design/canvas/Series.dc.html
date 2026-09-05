@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+    a { color: #2E6BB0; } a:hover { color: #1E4F8A; }
+  </style>
+</helmet>
+<div style="width: 1000px; height: 570px; background: #FBFAF7; color: #17202E; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 28px;">
+  <div style="display: flex; flex-direction: column; gap: 6px;">
+    <div style="font-size: 20px; font-weight: 700;">시리즈 확장 규칙</div>
+    <div style="font-size: 14px; line-height: 1.6; color: #5B6778;">레이아웃은 고정, 바탕색과 삼각형의 채움만 바뀐다. 겨울은 윤곽선(출발), 봄은 절반, 여름은 꽉 찬 Δ. 세 권을 나란히 두면 변화량이 채워지는 과정이 보인다.</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="position: relative; width: 100%; height: 330px; background: #0E1B33; color: #E4ECF4; box-sizing: border-box; padding: 20px; overflow: hidden;">
+        <div style="display: flex; justify-content: space-between; font-family: 'Space Grotesk', 'IBM Plex Sans KR', sans-serif; font-size: 9px; letter-spacing: 0.24em; color: #8FA6C4;"><div>PHYSICS · DELTA</div><div>WINTER</div></div>
+        <svg viewBox="0 0 520 460" width="170" height="150" style="position: absolute; left: 50px; top: 78px;" aria-hidden="true"><polygon points="260,18 502,442 18,442" fill="none" stroke="#E4ECF4" stroke-width="18"></polygon></svg>
+        <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 20px; font-weight: 700; color: #FFFFFF;">델타 물리학</div>
+          <div style="font-size: 10px; color: #B7C6DA;">이번 겨울, 변화량을 만든다</div>
+        </div>
+      </div>
+      <div style="font-size: 13px; font-weight: 600;">겨울 · 윤곽선 Δ</div>
+      <div style="font-size: 12px; color: #5B6778; line-height: 1.5;">물리학 전 범위 개념 완주</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="position: relative; width: 100%; height: 330px; background: #0F2E24; color: #E2EFE8; box-sizing: border-box; padding: 20px; overflow: hidden;">
+        <div style="display: flex; justify-content: space-between; font-family: 'Space Grotesk', 'IBM Plex Sans KR', sans-serif; font-size: 9px; letter-spacing: 0.24em; color: #8FB8A4;"><div>PHYSICS · DELTA</div><div>SPRING</div></div>
+        <svg viewBox="0 0 520 460" width="170" height="150" style="position: absolute; left: 50px; top: 78px;" aria-hidden="true">
+          <polygon points="139,230 381,230 502,442 18,442" fill="#E2EFE8"></polygon>
+          <polygon points="260,18 502,442 18,442" fill="none" stroke="#E2EFE8" stroke-width="18"></polygon>
+        </svg>
+        <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 20px; font-weight: 700; color: #FFFFFF;">델타 물리학</div>
+          <div style="font-size: 10px; color: #B9D3C6;">[봄 교재 부제]</div>
+        </div>
+      </div>
+      <div style="font-size: 13px; font-weight: 600;">봄 · 절반 채운 Δ</div>
+      <div style="font-size: 12px; color: #5B6778; line-height: 1.5;">[1학기 내신 범위, 추후 결정]</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="position: relative; width: 100%; height: 330px; background: #33200F; color: #F3E8DC; box-sizing: border-box; padding: 20px; overflow: hidden;">
+        <div style="display: flex; justify-content: space-between; font-family: 'Space Grotesk', 'IBM Plex Sans KR', sans-serif; font-size: 9px; letter-spacing: 0.24em; color: #C4A88C;"><div>PHYSICS · DELTA</div><div>SUMMER</div></div>
+        <svg viewBox="0 0 520 460" width="170" height="150" style="position: absolute; left: 50px; top: 78px;" aria-hidden="true"><polygon points="260,18 502,442 18,442" fill="#F3E8DC" stroke="#F3E8DC" stroke-width="18"></polygon></svg>
+        <div style="position: absolute; left: 20px; right: 20px; bottom: 20px; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 20px; font-weight: 700; color: #FFFFFF;">델타 물리학</div>
+          <div style="font-size: 10px; color: #DCC9B6;">[여름 교재 부제]</div>
+        </div>
+      </div>
+      <div style="font-size: 13px; font-weight: 600;">여름 · 꽉 찬 Δ</div>
+      <div style="font-size: 12px; color: #5B6778; line-height: 1.5;">[2학기 대비 범위, 추후 결정]</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
