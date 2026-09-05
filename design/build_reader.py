@@ -61,7 +61,14 @@ def post(h):
     # 메모 / 자주 틀리는 곳
     h = re.sub(r'<blockquote>\s*<p><strong>\[(Δ메모|자주 틀리는 곳)\]</strong>\s*(.*?)</p>\s*</blockquote>', r'<aside class="note"><span class="eyebrow">\1</span><p>\2</p></aside>', h, flags=re.S)
     # 그림 자리
-    h = re.sub(r'<p>\[그림 ([^\]]+)\]\s*(.*?)</p>', r'<figure class="fig"><span class="eyebrow">그림 \1</span><p>\2</p></figure>', h, flags=re.S)
+    def figrep(m):
+        fid, cap = m.group(1), m.group(2)
+        fp = os.path.join(ROOT, 'manuscript', 'figures', f'{fid}.svg')
+        if os.path.exists(fp):
+            svg = open(fp, encoding='utf-8').read()
+            return f'<figure class="fig drawn"><div class="art">{svg}</div><figcaption><span class="eyebrow">그림 {fid}</span> {cap}</figcaption></figure>'
+        return f'<figure class="fig"><span class="eyebrow">그림 {fid}</span><p>{cap}</p></figure>'
+    h = re.sub(r'<p>\[그림 ([^\]]+)\]\s*(.*?)</p>', figrep, h, flags=re.S)
     # 구분선 제거(코너 헤더가 이미 선을 가짐)
     h = h.replace('<hr />', '').replace('<hr>', '')
     # 단원 지도 한 줄: **1** A · **2** B · **3** C
@@ -166,6 +173,11 @@ h1 {{ font-family:var(--serif); font-weight:700; font-size:34px; line-height:1.2
 .note p {{ margin:0; }}
 .fig {{ margin:16px 0 20px; padding:14px 16px; border:1px dashed var(--muted); color:var(--muted); font-size:13.5px; max-width:640px; }}
 .fig p {{ margin:4px 0 0; color:var(--ink); }}
+.fig.drawn {{ border:0; padding:0; color:var(--ink); }}
+.fig.drawn .art {{ background:var(--soft); padding:16px 12px; border-radius:2px; color:var(--ink); }}
+.fig.drawn .art svg {{ color:var(--ink) !important; }}
+.fig.drawn figcaption {{ font-size:12.5px; color:var(--muted); margin-top:8px; line-height:1.55; }}
+.fig.drawn figcaption .eyebrow {{ color:var(--main); }}
 .step {{ display:flex; gap:10px; align-items:flex-start; }}
 .sn {{ color:var(--main); font-weight:700; flex-shrink:0; }}
 .prob, .ans {{ display:flex; flex-wrap:wrap; gap:0 10px; align-items:baseline; padding-top:10px; border-top:1px solid var(--rule); max-width:640px; }}

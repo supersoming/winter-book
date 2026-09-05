@@ -10,6 +10,7 @@
 | `docs/04-textbook-map.md` | 교과서(2022 개정 물리학) 소단원과 이 책 단원 대조표 |
 | `docs/05-writing-rules.md` | 원고 작성 규칙 (교과서 문항 사용 금지 등) |
 | `manuscript/` | 단원별 원고 (마크다운) |
+| `manuscript/figures/` | 원고 그림 65장 (SVG). `design/figures.py`로 생성 |
 | `design/canvas/` | 표지 시안·내지 샘플 디자인 원본 (`*.dc.html`, `canvas.json`) |
 
 디자인 캔버스: https://claude.ai/code/artifact/2f8d81a6-5ae9-4b4b-b663-5a844b8d7dc7
